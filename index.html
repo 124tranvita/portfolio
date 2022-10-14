@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <!-- <link rel="stylesheet" href="style.scss" /> -->
+    <link rel="stylesheet" href="svgicons.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"
+      defer
+    ></script>
+    <script src="main.js" defer></script>
+    <script src="gsap.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="grid grid-cols-12 gap-6 bg-black/60">
+      <div class="sidebar col-span-1">
+        <!-- home -->
+        <span id="home">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
+            />
+          </svg>
+        </span>
+
+        <!-- profile -->
+        <span id="profile">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
+            />
+            <path
+              d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"
+            />
+          </svg>
+        </span>
+
+        <!-- timeline -->
+        <span id="timeline">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1 2.5A1.5 1.5 0 0 1 2.5 1h1A1.5 1.5 0 0 1 5 2.5h4.134a1 1 0 1 1 0 1h-2.01c.18.18.34.381.484.605.638.992.892 2.354.892 3.895 0 1.993.257 3.092.713 3.7.356.476.895.721 1.787.784A1.5 1.5 0 0 1 12.5 11h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5H6.866a1 1 0 1 1 0-1h1.711a2.839 2.839 0 0 1-.165-.2C7.743 11.407 7.5 10.007 7.5 8c0-1.46-.246-2.597-.733-3.355-.39-.605-.952-1-1.767-1.112A1.5 1.5 0 0 1 3.5 5h-1A1.5 1.5 0 0 1 1 3.5v-1zM2.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10 10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"
+            />
+          </svg>
+        </span>
+
+        <!-- skill -->
+        <span id="skill">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z"
+            />
+          </svg>
+        </span>
+
+        <!-- project -->
+        <span id="project">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M13.5 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h11zm-11-1a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2h-11z"
+            />
+            <path
+              d="M6.5 3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm-4 0a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm8 0a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div class="main col-span-11">
+        <!-- intro -->
+        <div class="intro active">
+          <h1 class="name mb-4 font-bold text-8xl text-slate-300">
+            Phuoc Tran
+          </h1>
+          <p class="short mb-6 font-bold text-2xl text-slate-400">
+            I'm fresher front-end developer
+          </p>
+          <div class="social flex justify-start text-slate-400">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                />
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                />
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                />
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- about -->
+        <div class="about hidden">
+          <div class="grid grid-rows-2 gap-6 items-center">
+            <!-- avatar -->
+            <div
+              class="avatar row-span-1 flex flex-col justify-between items-center"
+            >
+              <img
+                src="./images/avata.jpg"
+                alt="avatar"
+                width="256"
+                height="256"
+                class="rounded-md"
+              />
+              <h1 class="text-xl text-slate-400">
+                Oneday, I'll create an awsome thing! &#128150;
+              </h1>
+            </div>
+            <!-- infomation -->
+            <div
+              class="info row-span-1 grid grid-rows-2 gap-10 text-xl text-slate-300"
+            >
+              <!-- first line -->
+              <div class="span-row-1 grid grid-cols-3">
+                <p class="span-col-1 mx-auto info-text">
+                  <span class="font-semibold text-slate-200">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      class="mx-auto mb-4"
+                    >
+                      <path
+                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"
+                      />
+                    </svg>
+                  </span>
+                  Tran Huu Phuoc
+                </p>
+                <p class="span-col-1 mx-auto info-text">
+                  <span class="font-semibold text-slate-200">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      class="mx-auto mb-4"
+                    >
+                      <path
+                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"
+                      />
+                    </svg>
+                  </span>
+                  13 August 1992
+                </p>
+                <p class="span-col-1 mx-auto info-text">
+                  <span class="font-semibold text-slate-200">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      class="mx-auto mb-4"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z"
+                      />
+                      <path
+                        d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"
+                      />
+                      <path
+                        d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"
+                      />
+                    </svg>
+                  </span>
+                  Bachelor's degree
+                </p>
+              </div>
+
+              <!-- second line -->
+              <div class="span-row-1 grid grid-cols-3">
+                <p class="span-col-1 mx-auto info-text-2">
+                  <span class="font-semibold text-slate-200">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      class="mx-auto mb-4"
+                    >
+                      <path
+                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                      />
+                    </svg>
+                  </span>
+                  36 Lang The, Tan Thanh Tay, Cu Chi, HCMC
+                </p>
+                <p class="span-col-1 mx-auto info-text-2">
+                  <span class="font-semibold text-slate-200">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      class="mx-auto mb-4"
+                    >
+                      <path
+                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
+                      />
+                    </svg>
+                  </span>
+                  123tranvita@gmail.com
+                </p>
+                <p class="span-col-1 mx-auto info-text-2">
+                  <span class="font-semibold text-slate-200">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      class="mx-auto mb-4"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                      />
+                    </svg>
+                  </span>
+                  0379712875
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- timeline -->
+        <div class="timeline relative hidden">
+          <div
+            class="line flex justify-between items-baseline border-b-2 border-slate-300 h-2"
+          >
+            <span></span>
+            <span class="invisible"></span>
+            <span></span>
+            <span></span>
+            <span class="invisible"></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- school -->
+          <div
+            class="school bg-black/30 absolute top-12 left-0 p-4 rounded-lg text-slate-100"
+          >
+            <h1 class="text-lg font-semibold">
+              HCMC University of Technology and Education
+            </h1>
+            <p class="text-md text-slate-300">Bachelor's degree</p>
+            <p class="text-md text-slate-300">IT - Computer Network</p>
+          </div>
+
+          <!-- work -->
+          <div
+            class="work bg-black/30 absolute bottom-12 right-0 p-4 rounded-lg text-slate-100"
+          >
+            <h1 class="text-lg font-semibold">WinMagic, HCMC</h1>
+            <p class="text-md text-slate-300">Manual Tester</p>
+            <p class="text-md text-slate-300">
+              Create test cases and run the test for the company's product.
+            </p>
+          </div>
+
+          <!-- funix -->
+          <div
+            class="funix bg-black/30 absolute top-12 right-0 p-4 rounded-lg text-slate-100"
+          >
+            <h1 class="text-lg font-semibold">FUNiX</h1>
+            <p class="text-md text-slate-300">CCDNK310122</p>
+            <p class="text-md text-slate-300">Full stack web developer.</p>
+          </div>
+        </div>
+
+        <!-- skills -->
+        <div class="skills hidden">
+          <p id="proficient">Basic</p>
+          <div class="flex justify-around mb-20" id="proficientLogo">
+            <img src="./images/logo/html.svg" alt="html" />
+            <img src="./images/logo/css.svg" alt="css" />
+            <img src="./images/logo/js.svg" alt="js" />
+          </div>
+
+          <p id="intermediate">Front End</p>
+          <div class="flex justify-between mb-20" id="intermediateLogo">
+            <img src="./images/logo/reactjs.svg" alt="reactjs.svg" />
+            <img src="./images/logo/redux.svg" alt="redux.svg" />
+            <img src="./images/logo/tailwindcss.svg" alt="tailwindcss.svg" />
+            <img src="./images/logo/api.svg" alt="api.svg" />
+            <img src="./images/logo/git.svg" alt="css" />
+          </div>
+
+          <p id="beginner">Back End</p>
+          <div class="flex justify-around" id="beginnerLogo">
+            <img src="./images/logo/nodejs.svg" alt="nodejs.svg" />
+          </div>
+        </div>
+
+        <!-- projects -->
+        <div class="project hidden">
+          <div class="content relative shadow-md">
+            <!-- control buttons -->
+            <button class="prev shadow-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                />
+              </svg>
+            </button>
+            <button class="next shadow-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                />
+              </svg>
+            </button>
+
+            <!-- slide content -->
+            <div class="slide">
+              <!-- piggy -->
+              <div class="item relative active">
+                <img
+                  src="./images/project/piggy.png"
+                  alt="piggy"
+                  class="background-img"
+                />
+                <div class="absolute inset-0 bg-black/50 rounded-lg">
+                  <div
+                    class="background-0 text-white leading-10 pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
+                  >
+                    <a
+                      href="https://124tranvita.github.io/piggy-ui"
+                      target="_blank"
+                      class="hover:text-slate-300"
+                    >
+                      <h1 class="title-0 text-4xl font-semibold mb-4">
+                        The happy PiGGY!
+                      </h1>
+                    </a>
+
+                    <p class="tech-0 text-xl text-slate-50 mb-2">
+                      A simple budget management web app.
+                    </p>
+                    <div class="tech-0 flex justify-start items-center">
+                      <span>Front end: </span>
+                      <span>
+                        <img
+                          src="./images/logo/reactjs.svg"
+                          alt="reactjs"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/tailwindcss.svg"
+                          alt="tailwindcss"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/headless.svg"
+                          alt="headless"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                    </div>
+                    <div class="tech-0 flex justify-start items-center">
+                      <span>Back end: </span>
+                      <span>
+                        <img
+                          src="./images/logo/nodejs.svg"
+                          alt="nodejs"
+                          class="w-6 h-6 rounded-md"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/ex.png"
+                          alt="express"
+                          class="w-6 h-6 rounded-md"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/mongodb.svg"
+                          alt="mongodb"
+                          class="w-6 h-6 rounded-md"
+                        />
+                      </span>
+                    </div>
+                    <div class="source-0 flex justify-start items-center">
+                      <a
+                        href="https://124tranvita.github.io/piggy-ui"
+                        target="_blank"
+                      >
+                        Demo
+                      </a>
+                      <a
+                        href="https://github.com/124tranvita/piggy-ui"
+                        target="_blank"
+                      >
+                        Source (FE)
+                      </a>
+                      <a
+                        href="https://github.com/124tranvita/piggy-api"
+                        target="_blank"
+                      >
+                        Source (BE)
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- simple new -->
+              <div class="item relative hidden">
+                <img
+                  src="./images/project/simple-news.png"
+                  alt="simple-news"
+                  class="background-img"
+                />
+                <div class="absolute inset-0 bg-black/50 rounded-lg">
+                  <div
+                    class="background-1 text-white leading-10 pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
+                  >
+                    <a
+                      href="https://124tranvita.github.io/gnews-api"
+                      target="_blank"
+                      class="hover:text-slate-300"
+                    >
+                      <h1 class="title-1 text-4xl font-semibold mb-4">
+                        Simple NEWS
+                      </h1>
+                    </a>
+
+                    <p class="tech-1 text-xl text-slate-50 mb-2">
+                      A simple daily news website with full responsiveness.
+                    </p>
+                    <div class="tech-1 flex justify-start items-center">
+                      <span>Front end: </span>
+                      <span>
+                        <img
+                          src="./images/logo/reactjs.svg"
+                          alt="reactjs"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/typescript.svg"
+                          alt="typescript"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/tailwindcss.svg"
+                          alt="tailwindcss"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/headless.svg"
+                          alt="headless"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/rtk.svg"
+                          alt="rtk"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                    </div>
+                    <div class="tech-1 flex justify-start items-center">
+                      <span>Back end: </span>
+                      <span>
+                        <img
+                          src="./images/logo/gnews.png"
+                          alt="reactjs"
+                          class="w-6 h-6 rounded-md"
+                        />
+                      </span>
+                    </div>
+                    <div class="source-1 flex justify-start items-center">
+                      <a
+                        href="https://124tranvita.github.io/gnews-api"
+                        target="_blank"
+                      >
+                        Demo
+                      </a>
+                      <a
+                        href="https://github.com/124tranvita/gnews-api"
+                        target="_blank"
+                      >
+                        Source
+                      </a>
+                    </div>
+
+                    <!-- front-end github -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- mailchym api-->
+              <div class="item relative hidden">
+                <img
+                  src="./images/project/mailchymp.png"
+                  alt="mailchym"
+                  class="background-img"
+                />
+                <div class="absolute inset-0 bg-black/50 rounded-lg">
+                  <div
+                    class="background-2 text-white leading-10 pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
+                  >
+                    <a
+                      href="http://mailchympapi.herokuapp.com/"
+                      target="_blank"
+                      class="hover:text-slate-300"
+                    >
+                      <h1 class="title-2 text-4xl font-semibold mb-4">
+                        Mailchymp API
+                      </h1>
+                    </a>
+
+                    <p class="tech-2 text-xl text-slate-50 mb-2">
+                      Easy Mailchimp Marketing API interactive with web UI.
+                    </p>
+                    <div class="tech-2 flex justify-start items-center">
+                      <span>Front end: </span>
+                      <span>
+                        <img
+                          src="./images/logo/js.svg"
+                          alt="javascript"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/bootstrap.svg"
+                          alt="bootstrap"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                    </div>
+                    <div class="tech-2 flex justify-start items-center">
+                      <span>Back end: </span>
+                      <span>
+                        <img
+                          src="./images/logo/flask.svg"
+                          alt="flask"
+                          class="w-6 h-6 rounded-md"
+                        />
+                      </span>
+                    </div>
+                    <div class="source-2 flex justify-start items-center">
+                      <a
+                        href="http://mailchympapi.herokuapp.com/"
+                        target="_blank"
+                      >
+                        Demo
+                      </a>
+                      <a
+                        href="https://github.com/124tranvita/mailchimp-marketing-api"
+                        target="_blank"
+                      >
+                        Source
+                      </a>
+                    </div>
+
+                    <!-- front-end github -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- funix asm-->
+              <div class="item relative hidden">
+                <img
+                  src="./images/project/asm.png"
+                  alt="asm"
+                  class="background-img"
+                />
+                <div class="absolute inset-0 bg-black/50 rounded-lg">
+                  <div
+                    class="background-3 text-white leading-10 pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
+                  >
+                    <a
+                      href="https://124tranvita.github.io/FUNiXReactJSASM"
+                      target="_blank"
+                      class="hover:text-slate-300"
+                    >
+                      <h1 class="title-2 text-4xl font-semibold mb-4">
+                        Staffs Management
+                      </h1>
+                    </a>
+
+                    <p class="tech-3 text-xl text-slate-50 mb-2">
+                      FUNiX's ReactJS course final assignment.
+                    </p>
+                    <div class="tech-3 flex justify-start items-center">
+                      <span>Front end: </span>
+                      <span>
+                        <img
+                          src="./images/logo/reactjs.svg"
+                          alt="reactjs"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/rtk.svg"
+                          alt="rtk"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/bootstrap.svg"
+                          alt="bootstrap"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                      <span>
+                        <img
+                          src="./images/logo/formik.png"
+                          alt="formik"
+                          class="w-6 h-6"
+                        />
+                      </span>
+                    </div>
+                    <div class="source-3 flex justify-start items-center">
+                      <a
+                        href="https://124tranvita.github.io/FUNiXReactJSASM"
+                        target="_blank"
+                      >
+                        Demo
+                      </a>
+                      <a
+                        href="https://github.com/124tranvita/FUNiXReactJSASM"
+                        target="_blank"
+                      >
+                        Source
+                      </a>
+                    </div>
+
+                    <!-- front-end github -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

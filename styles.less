@@ -1,0 +1,338 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("./images/background-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 35%;
+  height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  span {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    background-color: #3b82f6;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -50px;
+    transition: all 0.5s;
+    transform-origin: left center;
+    transform: scaleX(0);
+  }
+
+  span:hover::after {
+    transform: scaleX(1);
+  }
+
+  span:nth-of-type(1)::after {
+    content: "Home";
+  }
+
+  span:nth-of-type(2)::after {
+    content: "About";
+  }
+
+  span:nth-of-type(3)::after {
+    content: "Timeline";
+    right: -65px;
+  }
+
+  span:nth-of-type(4)::after {
+    content: "Skills";
+  }
+
+  span:nth-of-type(5)::after {
+    content: "Projects";
+    right: -65px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  height: 100vh;
+}
+
+.intro {
+  padding-left: 8rem;
+
+  .short {
+    transform-origin: left center;
+  }
+
+  .social {
+    span {
+      padding-right: 0.5rem;
+      transition: all 0.5s;
+    }
+
+    span:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.about {
+  width: 80%;
+  margin: auto;
+
+  .info {
+    transform-origin: left center;
+  }
+}
+
+.timeline {
+  width: 80%;
+  margin: auto;
+
+  span {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #2563eb;
+  }
+
+  span:nth-of-type(1)::after {
+    content: "09 2010";
+    display: block;
+    position: absolute;
+    width: 4rem;
+    bottom: -60%;
+    left: 55%;
+    transform: translate(-50%, 50%);
+    color: #fff;
+  }
+
+  span:nth-of-type(3)::after {
+    content: "09 2015";
+    display: block;
+    position: absolute;
+    width: 4rem;
+    bottom: -60%;
+    left: 55%;
+    transform: translate(-50%, 50%);
+    color: #fff;
+  }
+
+  span:nth-of-type(4)::after {
+    content: "10 2016";
+    display: block;
+    position: absolute;
+    width: 4rem;
+    bottom: -60%;
+    left: 55%;
+    transform: translate(-50%, 50%);
+    color: #fff;
+  }
+
+  span:nth-of-type(6)::after {
+    content: "01 2022";
+    display: block;
+    position: absolute;
+    width: 4rem;
+    bottom: -60%;
+    left: 55%;
+    transform: translate(-50%, 50%);
+    color: #fff;
+  }
+
+  span:nth-of-type(7)::after {
+    content: "Present";
+    display: block;
+    position: absolute;
+    width: 4rem;
+    bottom: -60%;
+    left: 55%;
+    transform: translate(-50%, 50%);
+    color: #fff;
+  }
+
+  .school {
+    width: 34%;
+  }
+
+  .work {
+    width: 50%;
+  }
+
+  .funix {
+    width: 18%;
+  }
+
+  .line {
+    transform-origin: left center;
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding: 4rem 0;
+  width: 80%;
+
+  img {
+    width: 3rem;
+    height: auto;
+    transition: all 0.5s;
+  }
+
+  img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  p {
+    margin: auto;
+    margin-bottom: 4rem;
+    font-weight: 700;
+    color: white;
+    position: relative;
+  }
+
+  p::after,
+  p::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+  }
+
+  p::before {
+    left: -110%;
+  }
+
+  p::after {
+    right: -110%;
+  }
+}
+
+.project {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    width: 80%;
+    height: 600px;
+  }
+
+  @media only screen and (min-width: 1400px) {
+    .content {
+      width: 70%;
+    }
+  }
+
+  button {
+    background-color: white;
+    height: 50px;
+  }
+
+  .prev {
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 0 1rem;
+    transition: all 0.5s;
+  }
+
+  .prev:hover {
+    transform: scale(1.1);
+  }
+
+  .next {
+    position: absolute;
+    right: -10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 0 1rem;
+    transition: all 0.5s;
+  }
+
+  .next:hover {
+    transform: scale(1.1);
+  }
+
+  .slide {
+    .background-img {
+      height: 600px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      // transform: translateX(-50%);
+    }
+
+    .item {
+      transition: all 0.5s;
+    }
+
+    [class^="tech"] span {
+      padding-right: 15px;
+      font-size: large;
+    }
+
+    [class^="source"] {
+      a {
+        position: relative;
+        padding-right: 1rem;
+      }
+
+      a:hover {
+        color: #cbd5e1;
+      }
+
+      a:nth-of-type(1)::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 0.5rem;
+        width: 1px;
+        height: 50%;
+        background-color: #fff;
+      }
+    }
+  }
+}
