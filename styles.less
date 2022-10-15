@@ -10,15 +10,23 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: 35%;
-  height: 100vh;
+  // height: 100vh;
 }
 
 .sidebar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: space-around;
+  padding: 1rem 0 0 0;
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-left: 2rem;
+  }
 
   span {
     position: relative;
@@ -27,11 +35,11 @@ body {
     align-items: center;
     margin-bottom: 2rem;
     border-radius: 50%;
-    background-color: #3b82f6;
+    background-color: #64748b;
     width: 3rem;
     height: 3rem;
     cursor: pointer;
-    color: #fff;
+    color: #f8fafc;
   }
 
   span::after {
@@ -48,26 +56,28 @@ body {
     transform: scaleX(1);
   }
 
-  span:nth-of-type(1)::after {
-    content: "Home";
-  }
+  @media only screen and (min-width: 1400px) {
+    span:nth-of-type(1)::after {
+      content: "Home";
+    }
 
-  span:nth-of-type(2)::after {
-    content: "About";
-  }
+    span:nth-of-type(2)::after {
+      content: "About";
+    }
 
-  span:nth-of-type(3)::after {
-    content: "Timeline";
-    right: -65px;
-  }
+    span:nth-of-type(3)::after {
+      content: "Timeline";
+      right: -65px;
+    }
 
-  span:nth-of-type(4)::after {
-    content: "Skills";
-  }
+    span:nth-of-type(4)::after {
+      content: "Skills";
+    }
 
-  span:nth-of-type(5)::after {
-    content: "Projects";
-    right: -65px;
+    span:nth-of-type(5)::after {
+      content: "Projects";
+      right: -65px;
+    }
   }
 }
 
@@ -80,7 +90,12 @@ body {
 }
 
 .intro {
-  padding-left: 8rem;
+  margin: auto;
+
+  @media only screen and (min-width: 768px) {
+    padding-left: 8rem;
+    margin: 0;
+  }
 
   .short {
     transform-origin: left center;
@@ -106,10 +121,14 @@ body {
   .info {
     transform-origin: left center;
   }
+
+  .info-text {
+    text-align: center;
+  }
 }
 
 .timeline {
-  width: 80%;
+  width: 85%;
   margin: auto;
 
   span {
@@ -120,59 +139,36 @@ body {
     background-color: #2563eb;
   }
 
-  span:nth-of-type(1)::after {
-    content: "09 2010";
+  span::after {
+    content: "";
     display: block;
     position: absolute;
     width: 4rem;
     bottom: -60%;
     left: 55%;
+    font-size: small;
     transform: translate(-50%, 50%);
     color: #fff;
+  }
+
+  span:nth-of-type(1)::after {
+    content: "09 2010";
   }
 
   span:nth-of-type(3)::after {
     content: "09 2015";
-    display: block;
-    position: absolute;
-    width: 4rem;
-    bottom: -60%;
-    left: 55%;
-    transform: translate(-50%, 50%);
-    color: #fff;
   }
 
   span:nth-of-type(4)::after {
     content: "10 2016";
-    display: block;
-    position: absolute;
-    width: 4rem;
-    bottom: -60%;
-    left: 55%;
-    transform: translate(-50%, 50%);
-    color: #fff;
   }
 
   span:nth-of-type(6)::after {
     content: "01 2022";
-    display: block;
-    position: absolute;
-    width: 4rem;
-    bottom: -60%;
-    left: 55%;
-    transform: translate(-50%, 50%);
-    color: #fff;
   }
 
   span:nth-of-type(7)::after {
     content: "Present";
-    display: block;
-    position: absolute;
-    width: 4rem;
-    bottom: -60%;
-    left: 55%;
-    transform: translate(-50%, 50%);
-    color: #fff;
   }
 
   .school {
@@ -197,11 +193,13 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 4rem 0;
   width: 80%;
 
   img {
-    width: 3rem;
+    width: 2rem;
     height: auto;
     transition: all 0.5s;
   }
@@ -247,12 +245,13 @@ body {
 
   .content {
     width: 80%;
-    height: 600px;
+    height: 500px;
   }
 
   @media only screen and (min-width: 1400px) {
     .content {
       width: 70%;
+      height: 600px;
     }
   }
 
@@ -297,11 +296,23 @@ body {
 
   .slide {
     .background-img {
-      height: 600px;
+      height: 500px;
       width: 100%;
       object-fit: cover;
       border-radius: 0.5rem;
       // transform: translateX(-50%);
+    }
+
+    @media only screen and (min-width: 1400px) {
+      .background-img {
+        height: 600px;
+      }
+    }
+
+    @media only screen and (min-width: 1400px) {
+      .background-img {
+        height: 600px;
+      }
     }
 
     .item {

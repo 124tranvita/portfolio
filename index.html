@@ -15,11 +15,28 @@
     ></script>
     <script src="main.js" defer></script>
     <script src="gsap.js" defer></script>
-    <title>Document</title>
+    <title>Phuoc Tran - Portfolio</title>
   </head>
   <body>
-    <div class="grid grid-cols-12 gap-6 bg-black/60">
-      <div class="sidebar col-span-1">
+    <!-- Loader -->
+    <div
+      class="loader absolute inset-0 flex justify-center items-center z-20 bg-white duration-300 transition-all"
+    >
+      <span class="flex">
+        <span
+          class="animate-ping absolute inline-flex h-6 w-6 rounded-full bg-sky-400 opacity-75"
+        ></span>
+        <span
+          class="relative inline-flex rounded-full h-6 w-6 bg-sky-500"
+        ></span>
+      </span>
+    </div>
+
+    <!-- main content -->
+    <main class="grid md:grid-cols-12 gap-6 bg-black/60">
+      <div
+        class="sidebar row-span-1 order-2 md:col-span-1 md:row-span-full md:order-1"
+      >
         <!-- home -->
         <span id="home">
           <svg
@@ -107,13 +124,19 @@
           </svg>
         </span>
       </div>
-      <div class="main col-span-11">
+      <div
+        class="main row-span-5 order-1 md:col-span-11 md:row-span-full md:order-2"
+      >
         <!-- intro -->
         <div class="intro active">
-          <h1 class="name mb-4 font-bold text-8xl text-slate-300">
+          <h1
+            class="name mb-4 font-bold text-4xl md:text-6xl lg:text-8xl text-slate-300"
+          >
             Phuoc Tran
           </h1>
-          <p class="short mb-6 font-bold text-2xl text-slate-400">
+          <p
+            class="short mb-6 font-bold text-lg md:text-xl lg:text-2xl text-slate-400"
+          >
             I'm fresher front-end developer
           </p>
           <div class="social flex justify-start text-slate-400">
@@ -174,29 +197,27 @@
 
         <!-- about -->
         <div class="about hidden">
-          <div class="grid grid-rows-2 gap-6 items-center">
+          <div class="flex flex-col justify-between items-center">
             <!-- avatar -->
             <div
-              class="avatar row-span-1 flex flex-col justify-between items-center"
+              class="avatar flex flex-col justify-between items-center gap-6"
             >
               <img
                 src="./images/avata.jpg"
                 alt="avatar"
-                width="256"
-                height="256"
-                class="rounded-md"
+                class="rounded-md w-44 h-44 lg:w-60 lg:h-60"
               />
-              <h1 class="text-xl text-slate-400">
+              <h1 class="md:text-lg lg:text-xl text-slate-400 mb-6">
                 Oneday, I'll create an awsome thing! &#128150;
               </h1>
             </div>
             <!-- infomation -->
             <div
-              class="info row-span-1 grid grid-rows-2 gap-10 text-xl text-slate-300"
+              class="info flex flex-col justify-between items-center md:text-md lg:text-xl text-slate-300"
             >
               <!-- first line -->
-              <div class="span-row-1 grid grid-cols-3">
-                <p class="span-col-1 mx-auto info-text">
+              <div class="grid grid-cols-3 gap-4 items-center mb-4">
+                <p class="span-col-1 mx-auto info-text mb-3">
                   <span class="font-semibold text-slate-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -213,7 +234,7 @@
                   </span>
                   Tran Huu Phuoc
                 </p>
-                <p class="span-col-1 mx-auto info-text">
+                <p class="span-col-1 mx-auto info-text mb-3">
                   <span class="font-semibold text-slate-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -230,7 +251,7 @@
                   </span>
                   13 August 1992
                 </p>
-                <p class="span-col-1 mx-auto info-text">
+                <p class="span-col-1 mx-auto info-text mb-3">
                   <span class="font-semibold text-slate-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -257,8 +278,10 @@
               </div>
 
               <!-- second line -->
-              <div class="span-row-1 grid grid-cols-3">
-                <p class="span-col-1 mx-auto info-text-2">
+              <div
+                class="span-row-1 grid grid-rows-3 md:grid-cols-3 md:grid-rows-none"
+              >
+                <p class="span-col-1 mx-auto info-text-2 mb-3">
                   <span class="font-semibold text-slate-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -275,7 +298,7 @@
                   </span>
                   36 Lang The, Tan Thanh Tay, Cu Chi, HCMC
                 </p>
-                <p class="span-col-1 mx-auto info-text-2">
+                <p class="span-col-1 mx-auto info-text-2 mb-3">
                   <span class="font-semibold text-slate-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -292,7 +315,7 @@
                   </span>
                   123tranvita@gmail.com
                 </p>
-                <p class="span-col-1 mx-auto info-text-2">
+                <p class="span-col-1 mx-auto info-text-2 mb-3">
                   <span class="font-semibold text-slate-200">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -333,45 +356,57 @@
           <div
             class="school bg-black/30 absolute top-12 left-0 p-4 rounded-lg text-slate-100"
           >
-            <h1 class="text-lg font-semibold">
+            <h1 class="md:text-md lg:text-lg font-semibold">
               HCMC University of Technology and Education
             </h1>
-            <p class="text-md text-slate-300">Bachelor's degree</p>
-            <p class="text-md text-slate-300">IT - Computer Network</p>
+            <p class="md:text-sm lg:text-md text-slate-300">
+              Bachelor's degree
+            </p>
+            <p class="md:text-sm lg:text-md text-slate-300">
+              IT - Computer Network
+            </p>
           </div>
 
           <!-- work -->
           <div
             class="work bg-black/30 absolute bottom-12 right-0 p-4 rounded-lg text-slate-100"
           >
-            <h1 class="text-lg font-semibold">WinMagic, HCMC</h1>
-            <p class="text-md text-slate-300">Manual Tester</p>
-            <p class="text-md text-slate-300">
+            <h1 class="md:text-md lg:text-lg font-semibold">WinMagic, HCMC</h1>
+            <p class="md:text-sm lg:text-md text-slate-300">Manual Tester</p>
+            <p class="md:text-sm lg:text-md text-slate-300">
               Create test cases and run the test for the company's product.
             </p>
           </div>
 
           <!-- funix -->
           <div
-            class="funix bg-black/30 absolute top-12 right-0 p-4 rounded-lg text-slate-100"
+            class="funix bg-black/30 absolute top-12 right-0 p-2 md:p-4 rounded-lg text-slate-100"
           >
-            <h1 class="text-lg font-semibold">FUNiX</h1>
-            <p class="text-md text-slate-300">CCDNK310122</p>
-            <p class="text-md text-slate-300">Full stack web developer.</p>
+            <h1 class="md:text-md lg:text-lg font-semibold">FUNiX</h1>
+            <p class="hidden md:block md:text-xs lg:text-md text-slate-300">
+              CCDNK310122
+            </p>
+            <p class="md:hidden md:text-xs lg:text-md text-slate-300">CCDN</p>
+            <p class="hidden md:block md:text-sm lg:text-md text-slate-300">
+              Full stack web developer.
+            </p>
           </div>
         </div>
 
         <!-- skills -->
         <div class="skills hidden">
           <p id="proficient">Basic</p>
-          <div class="flex justify-around mb-20" id="proficientLogo">
+          <div class="flex justify-around mb-16 lg:mb-20" id="proficientLogo">
             <img src="./images/logo/html.svg" alt="html" />
             <img src="./images/logo/css.svg" alt="css" />
             <img src="./images/logo/js.svg" alt="js" />
           </div>
 
           <p id="intermediate">Front End</p>
-          <div class="flex justify-between mb-20" id="intermediateLogo">
+          <div
+            class="flex justify-between mb-16 lg:mb-20"
+            id="intermediateLogo"
+          >
             <img src="./images/logo/reactjs.svg" alt="reactjs.svg" />
             <img src="./images/logo/redux.svg" alt="redux.svg" />
             <img src="./images/logo/tailwindcss.svg" alt="tailwindcss.svg" />
@@ -427,19 +462,21 @@
                 />
                 <div class="absolute inset-0 bg-black/50 rounded-lg">
                   <div
-                    class="background-0 text-white leading-10 pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
+                    class="background-0 text-white leading-10 pl-8 md:pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
                   >
                     <a
                       href="https://124tranvita.github.io/piggy-ui"
                       target="_blank"
                       class="hover:text-slate-300"
                     >
-                      <h1 class="title-0 text-4xl font-semibold mb-4">
+                      <h1
+                        class="title-0 text-xl md:text-4xl font-semibold mb-4"
+                      >
                         The happy PiGGY!
                       </h1>
                     </a>
 
-                    <p class="tech-0 text-xl text-slate-50 mb-2">
+                    <p class="tech-0 text-lg md:text-xl text-slate-50 mb-2">
                       A simple budget management web app.
                     </p>
                     <div class="tech-0 flex justify-start items-center">
@@ -523,19 +560,21 @@
                 />
                 <div class="absolute inset-0 bg-black/50 rounded-lg">
                   <div
-                    class="background-1 text-white leading-10 pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
+                    class="background-1 text-white leading-10 pl-8 md:pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
                   >
                     <a
                       href="https://124tranvita.github.io/gnews-api"
                       target="_blank"
                       class="hover:text-slate-300"
                     >
-                      <h1 class="title-1 text-4xl font-semibold mb-4">
+                      <h1
+                        class="title-1 text-xl md:text-4xl font-semibold mb-4"
+                      >
                         Simple NEWS
                       </h1>
                     </a>
 
-                    <p class="tech-1 text-xl text-slate-50 mb-2">
+                    <p class="tech-1 text-lg md:text-xl text-slate-50 mb-2">
                       A simple daily news website with full responsiveness.
                     </p>
                     <div class="tech-1 flex justify-start items-center">
@@ -615,19 +654,21 @@
                 />
                 <div class="absolute inset-0 bg-black/50 rounded-lg">
                   <div
-                    class="background-2 text-white leading-10 pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
+                    class="background-2 text-white leading-10 pl-8 md:pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
                   >
                     <a
                       href="http://mailchympapi.herokuapp.com/"
                       target="_blank"
                       class="hover:text-slate-300"
                     >
-                      <h1 class="title-2 text-4xl font-semibold mb-4">
+                      <h1
+                        class="title-2 text-xl md:text-4xl font-semibold mb-4"
+                      >
                         Mailchymp API
                       </h1>
                     </a>
 
-                    <p class="tech-2 text-xl text-slate-50 mb-2">
+                    <p class="tech-2 text-lg md:text-xl text-slate-50 mb-2">
                       Easy Mailchimp Marketing API interactive with web UI.
                     </p>
                     <div class="tech-2 flex justify-start items-center">
@@ -686,19 +727,21 @@
                 />
                 <div class="absolute inset-0 bg-black/50 rounded-lg">
                   <div
-                    class="background-3 text-white leading-10 pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
+                    class="background-3 text-white leading-10 pl-8 md:pl-12 pt-12 bg-white/20 rounded-t-lg pb-6"
                   >
                     <a
                       href="https://124tranvita.github.io/FUNiXReactJSASM"
                       target="_blank"
                       class="hover:text-slate-300"
                     >
-                      <h1 class="title-2 text-4xl font-semibold mb-4">
+                      <h1
+                        class="title-2 text-xl md:text-4xl font-semibold mb-4"
+                      >
                         Staffs Management
                       </h1>
                     </a>
 
-                    <p class="tech-3 text-xl text-slate-50 mb-2">
+                    <p class="tech-3 text-lg md:text-xl text-slate-50 mb-2">
                       FUNiX's ReactJS course final assignment.
                     </p>
                     <div class="tech-3 flex justify-start items-center">
@@ -755,6 +798,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
